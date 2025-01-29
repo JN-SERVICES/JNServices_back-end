@@ -5,8 +5,8 @@ import { Dummy } from 'src/model/dummy.entity';
 import { DummyService } from 'src/service/dummy/dummy.service';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Dummy])],
-    controllers: [DummyController],
-    providers: [DummyService],
+  imports: [TypeOrmModule.forFeature([Dummy])],
+  controllers: [DummyController],
+  providers: [DummyService],
 })
-export class DummyModule { }
+export class DummyModule {}

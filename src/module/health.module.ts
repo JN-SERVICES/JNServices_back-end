@@ -1,10 +1,9 @@
-import { Module } from "@nestjs/common";
-import { TerminusModule } from "@nestjs/terminus";
-import { HealthController } from "src/controller/health/health.controller";
+import { Module } from '@nestjs/common';
+import { TerminusModule } from '@nestjs/terminus';
+import { HealthController } from 'src/controller/health/health.controller';
 
 @Module({
-    imports: [TerminusModule],
-    controllers: [HealthController],
+  imports: [TerminusModule],
+  controllers: [HealthController],
 })
-
-export class HealthModule { }
+export class HealthModule {}

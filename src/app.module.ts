@@ -6,9 +6,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { DummyModule } from './module/dummy/dummy.module';
-import { DummyService } from './service/dummy/dummy.service';
-import { DummyController } from './controller/dummy/dummy.controller';
-
 
 @Module({
   imports: [
@@ -25,6 +22,6 @@ import { DummyController } from './controller/dummy/dummy.controller';
     DummyModule,
   ],
   controllers: [HealthController, AppController],
-  providers: [AppService]
+  providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
