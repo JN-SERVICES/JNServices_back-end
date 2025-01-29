@@ -5,6 +5,9 @@ import { TerminusModule } from '@nestjs/terminus';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
+import { DummyModule } from './module/dummy/dummy.module';
+import { DummyService } from './service/dummy/dummy.service';
+import { DummyController } from './controller/dummy/dummy.controller';
 
 
 @Module({
@@ -19,7 +22,7 @@ import { ConfigModule } from '@nestjs/config';
       synchronize: true,
     }),
     TerminusModule,
-    // DummyModule,
+    DummyModule,
   ],
   controllers: [HealthController, AppController],
   providers: [AppService]
