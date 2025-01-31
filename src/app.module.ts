@@ -1,27 +1,15 @@
 import { Module } from '@nestjs/common';
 import { HealthController } from './controller/health/health.controller';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { TerminusModule } from '@nestjs/terminus';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { ConfigModule } from '@nestjs/config';
 import { DummyModule } from './module/dummy/dummy.module';
+import { DatabaseModule } from './module/database/database.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      isGlobal: true,
-    }),
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      url: process.env.DATABASE_URL,
-      autoLoadEntities: true,
-      synchronize: true,
-    }),
-    TerminusModule,
+    DatabaseModule,
+    TerminusModule, // Module officiel de NestJS pour gérer la santé de l'application
     DummyModule,
   ],
-  controllers: [HealthController, AppController],
-  providers: [AppService],
+  controllers: [HealthController],
 })
 export class AppModule {}
