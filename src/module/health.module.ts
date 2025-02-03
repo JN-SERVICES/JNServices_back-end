@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TerminusModule } from '@nestjs/terminus';
-import { HealthController } from 'src/controller/health/health.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
+
+import { HealthController } from 'src/controller';
+import { Dummy } from 'src/model';
 
 @Module({
-  imports: [TerminusModule],
+  imports: [TerminusModule, TypeOrmModule.forFeature([Dummy])],
   controllers: [HealthController],
 })
 export class HealthModule {}
