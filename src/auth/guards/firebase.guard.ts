@@ -1,0 +1,2 @@
+// SET USER = Requet.user (AND IF NOT EXIST, YOU SHOULD RETURN A REDIRECT CODE STATUS OR SOMETHING ELSE )
+export class FirebaseGuard {}
